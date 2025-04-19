@@ -1,0 +1,552 @@
+/* الأساسيات */
+body {
+  font-family: 'Arial', sans-serif;
+  background: #f4f7fc;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100%;
+  background-color: #34495e;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* زرار النيون */
+nav .button {
+  --border-right: 6px;
+  --text-stroke-color: rgba(255,255,255,0.6);
+  --animation-color: #37FF8B;
+  --fs-size: 1.2em;
+  letter-spacing: 2px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial";
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+  margin: 15px 0;
+  padding: 10px 0;
+  width: 100%;
+  text-align: center;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: block;
+}
+
+/* التأثير عند الهوف */
+nav .hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+
+nav .button:hover .hover-text {
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--animation-color));
+}
+
+/* إطار الصفحة بالكامل */
+body {
+  margin-left: 270px; /* توفير مساحة للشريط الجانبي */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #2980b9, #27ae60); /* تدرج لوني مميز */
+}
+
+/* أقسام الصفحات */
+section {
+  padding: 40px;
+  margin: 30px 0;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  position: relative;
+}
+
+section:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* العناوين داخل الأقسام */
+h1, h2, h3, h4 {
+  color: #2C3E50;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+/* النصوص داخل الأقسام */
+section p {
+  color: #7f8c8d;
+  line-height: 1.6;
+}
+
+/* زرار نيون أزرق دائري */
+.button-18 {
+  width: 9em;
+  height: 3em;
+  border-radius: 30em;
+  font-size: 15px;
+  font-family: inherit;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  color: white;
+  background-color: .button-17 {
+  margin: 0;
+  padding: 10px 20px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  font-family: "Arial", sans-serif;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  color: transparent;
+  letter-spacing: 2px;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+  
+  --neon-color: #00BFFF; /* أزرق مزرق واضح */
+  --glow: 0 0 10px var(--neon-color),
+          0 0 20px var(--neon-color),
+          0 0 30px var(--neon-color),
+          0 0 40px var(--neon-color);
+}
+
+.button-17 .hover-text {
+  position: absolute;
+  content: attr(data-text);
+  inset: 0;
+  width: 0%;
+  color: var(--neon-color);
+  border-right: 4px solid var(--neon-color);
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+  -webkit-text-stroke: 1px var(--neon-color);
+}
+
+.button-17:hover .hover-text {
+  width: 100%;
+  filter: drop-shadow(var(--glow));
+}
+
+/* إضافة تأثير النيون في الحالة العادية بدون hover */
+.button-17::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  color: var(--neon-color);
+  filter: drop-shadow(var(--glow));
+  opacity: 0.3;
+  pointer-events: none;
+}, #1e3c72;
+  box-shadow: 0 0 10px #00c3ff66, 0 0 20px #00c3ff33;
+  transition: 0.3s ease-in-out;
+}
+
+.button-18::before {
+  content: '';
+  width: 0;
+  height: 3em;
+  border-radius: 30em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #00c3ff 0%, #0f70ff 100%);
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+  box-shadow: 0 0 25px #00c;
+}
+
+.button-18:hover::before {
+  width: 9em;
+}
+
+.button-18:hover {
+  color: white;
+  box-shadow: 0 0 15px #00c3ff, 0 0 30px #00c3ff88;
+}
+
+.button-18 {
+  width: 9em;
+  height: 3em;
+  border-radius: 30em;
+  font-size: 15px;
+  font-family: inherit;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  color: #0f0;
+  background-color: #eaffea;
+  box-shadow: 0 0 10px #b7ffb766, 0 0 20px #d7ffd733;
+  transition: 0.3s ease-in-out;
+}
+
+.button-18 {
+  width: 7em; /* تكبير العرض شوية */
+  height: 3em; /* تكبير الارتفاع شوية */
+  border-radius: 15em; /* هنخليها زي ما هي عشان الشكل الدائري */
+  font-size: 16px; /* تكبير حجم الخط شوية */
+  font-family: sans-serif;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  color: #fff;
+  background-color: #808080; /* لون رمادي مبدئي عشان نشوف التدرج */
+  box-shadow: 0 0 5px #80808066, 0 0 10px #80808033;
+  transition: 0.3s ease-in-out;
+}
+
+.button-18::before {
+  content: '';
+  width: 0;
+  height: 3em; /* نفس ارتفاع الزر */
+  border-radius: 15em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #48d1cc 0%, #4682b4 100%); /* تدرج أزرق مخضر */
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+  box-shadow: 0 0 10px #48d1cc88;
+}
+
+.button-18:hover::before {
+  width: 7em; /* نفس عرض الزر */
+}
+
+.button-18:hover {
+  color: white;
+  box-shadow: 0 0 10px #48d1cc, 0 0 20px #48d1cc88;
+  background-color: #4682b4; /* لون أزرق أغمق عند الـ hover */
+}
+
+
+
+
+/* تأثيرات خاصة على الصور */
+img {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px 0;
+  border-radius: 10px;
+  border: 5px solid #2C3E50; /* إضافة إطار للصور */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.05); /* تأثير تكبير عند المرور فوق الصورة */
+}
+
+/* Feedback section - خاص لرأي المستخدم */
+#feedback-section {
+  background-color: #ecf0f1;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+}
+
+#feedback-section h2 {
+  text-align: center;
+  color: #2C3E50;
+}
+
+#feedback-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* الزوايا المنحرفة على الأزرار والنصوص */
+.skewed {
+  transform: skew(-10deg);
+}
+
+/* إضافة تدرج خلفية في بعض الأقسام */
+.dynamic-background {
+  background: linear-gradient(135deg, #2980b9, #27ae60);
+  color: white;
+}
+
+/* تأثيرات ديناميكية للصور */
+.dynamic-background img {
+  border: 2px solid #fff;
+}
+/* تصميم الـ Footer */
+footer {
+  position: relative;
+  background-color: #2c3e50; /* لون مختلف */
+  color: #ecf0f1;
+  text-align: center;
+  padding: 40px 20px;
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%); /* أطوال مائلة */
+  font-size: 16px;
+  font-weight: bold;
+}
+/* إعدادات عامة للتجاوب */
+* {
+  box-sizing: border-box;
+}
+
+/* شاشات صغيرة: موبايل */
+@media (max-width: 768px) {
+  nav {
+    position: relative;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+    transform: none;
+    border-radius: 0;
+    clip-path: none;
+  }
+
+  nav a {
+    padding: 10px;
+    font-size: 14px;
+    transform: none;
+  }
+
+  body {
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  section {
+    padding: 20px;
+    margin: 20px 0;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  footer {
+    font-size: 14px;
+    padding: 20px 10px;
+    clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
+  }
+}
+
+/* شاشات متوسطة: تابلت */
+@media (min-width: 769px) and (max-width: 1024px) {
+  nav {
+    width: 200px;
+    padding: 15px;
+  }
+
+  body {
+    margin-left: 220px;
+    padding: 15px;
+  }
+
+  section {
+    padding: 30px;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+/* blue-button.css */
+/* زرار بتأثير سحب داخلي عند الضغط */
+.button-33 {
+  background-color: #d0e7ff;
+  border-radius: 100px;
+  box-shadow:
+    rgba(44, 130, 187, 0.2) 0 -25px 18px -14px inset,
+    rgba(44, 130, 187, 0.15) 0 1px 2px,
+    rgba(44, 130, 187, 0.15) 0 2px 4px,
+    rgba(44, 130, 187, 0.15) 0 4px 8px,
+    rgba(44, 130, 187, 0.15) 0 8px 16px,
+    rgba(44, 130, 187, 0.15) 0 16px 32px;
+  color: #1c4c7c;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms ease;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  position: relative;
+  overflow: hidden;
+}
+
+.button-33:hover {
+  transform: scale(1.05) rotate(-1deg);
+}
+
+.button-33:active {
+  background-color: #1c4c7c;
+  color: #ffffff;
+  box-shadow:
+    inset 0 0 20px #0d2b4c,
+    inset 0 0 40px #0d2b4c,
+    inset 0 0 60px #0d2b4c;
+  transform: scale(0.98);
+}
+
+
+/* ترات مربعات الإدخال في فورم التسجيل */
+
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  background-color: #d0e7ff;
+  border-radius: 100px;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: inherit;
+  color: #1c4c7c;
+  box-shadow:
+    rgba(44, 130, 187, 0.2) 0 -25px 18px -14px inset,
+    rgba(44, 130, 187, 0.15) 0 1px 2px,
+    rgba(44, 130, 187, 0.15) 0 2px 4px,
+    rgba(44, 130, 187, 0.15) 0 4px 8px,
+    rgba(44, 130, 187, 0.15) 0 8px 16px,
+    rgba(44, 130, 187, 0.15) 0 16px 32px;
+  transition: all 250ms ease;
+  outline: none;
+}
+
+input:focus,
+textarea:focus {
+  background-color: #ffffff;
+  box-shadow:
+    inset 0 0 20px #0d2b4c,
+    inset 0 0 40px #0d2b4c;
+  color: #0d2b4c;
+}
+
+
+
+/* خواص شيك بوكس */
+
+/* Neon style form design */
+.my-form {
+  --_clr-primary: #666;
+  --_clr-hover: #7df9ff;
+  --_clr-checked: #00bfff;
+  --_neon-glow: 0 0 5px #00bfff, 0 0 10px #00bfff, 0 0 20px #00bfff;
+}
+
+.my-form > div {
+  --_clr-current: var(--_clr-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.my-form label {
+  cursor: pointer;
+  color: var(--_clr-current);
+  transition: color 150ms ease-in-out;
+}
+
+/* Styled checkbox and radio */
+.my-form input[type="checkbox"],
+.my-form input[type="radio"] {
+  appearance: none;
+  outline: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0.25rem;
+  background: transparent;
+  border: 2px solid var(--_clr-current);
+  border-radius: 4px;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  transition: border-color 150ms ease-in-out, box-shadow 150ms ease-in-out;
+}
+
+/* Keep radio circular */
+.my-form input[type="radio"] {
+  border-radius: 50%;
+}
+
+/* Checkmark for checkbox */
+.my-form input[type="checkbox"]::after {
+  content: "\2714";
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+  color: var(--_clr-checked);
+  font-size: 1rem;
+}
+
+/* Dot for radio */
+.my-form input[type="radio"]::after {
+  content: "";
+  width: 0.6rem;
+  height: 0.6rem;
+  background-color: var(--_clr-checked);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+/* Hover/focus styles */
+.my-form input:hover,
+.my-form input:focus-visible {
+  --_clr-current: var(--_clr-hover);
+  box-shadow: var(--_neon-glow);
+}
+
+/* Show content when checked */
+.my-form input:checked::after {
+  opacity: 1;
+}
+
+/* Change color when checked */
+.my-form input:checked,
+.my-form input:checked + label {
+  --_clr-current: var(--_clr-checked);
+  box-shadow: var(--_neon-glow);
+}
+
+
+
+/*زرار ال فيد باك */
+
+
